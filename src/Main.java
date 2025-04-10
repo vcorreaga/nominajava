@@ -35,9 +35,9 @@ public class Main {
             System.out.println("Ingrese su dia de descanso (Lunes a Viernes): ");
             diaDescanso = sc.nextLine();
             System.out.println("Ingrese el valor de la hora");
-            valorHora = sc.nextLine();
+            valorHora = sc.nextDouble();
             System.out.println("Ingrese la cantidad de horas trabajadas");
-            cantidadHora = sc.nextLine();
+            cantidadHora = sc.nextDouble();
             salarioBruto = valorHora * cantidadHora;
             System.out.println("Ingrese el valor del salario minimo para este año: ");
             valorSalarioMinimo = sc.nextDouble();
@@ -49,15 +49,15 @@ public class Main {
                 bonificacionEmpleado = salarioBruto*0.1;
                 auxilioTransporte = 200000;
             }
-            salarioNeto = salarioBruto + bonificacionEmpleado + auxilioTransporte;
-            System.out.println("El salario neto es: " + salarioNeto);
-            }
+            retencionSalud = salarioBruto * 0.04;
+            retencionPension = salarioBruto * 0.04;
+            salarioNeto = salarioBruto + retencionPension + retencionSalud + bonificacionEmpleado + auxilioTransporte;
+            System.out.println("Detalle de nómina empleado");
+            System.out.println("El empleado" + nombreEmpleado + " con documento de identidad " + documentoIdentidad + " tiene el siguiente detalle :\nSalario Bruto: " + salarioBruto + "\nDeduccion por salud: " + retencionSalud + "\nDeduccion por pension: " + retencionPension + "\nAuxilio Transporte: " + auxilioTransporte + "\nBonificación " + bonificacionEmpleado);            }
             else {
             System.out.println("Error de credenciales");
         }
         sc.close();
-        /*Otra Forma de hacerlo
-        *
-        * */
+        /*Otra Forma de aplicar condicionales **/       
     }
 }
